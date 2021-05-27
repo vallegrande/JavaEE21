@@ -1,23 +1,30 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>pe.edu.vallegrande.taller.javaee21</groupId>
-    <artifactId>JavaEE21</artifactId>
-    <version>1.0.0</version>
-    <packaging>pom</packaging>
     
+    <groupId>pe.edu.vallegrande.taller.javaee21</groupId>
+    <artifactId>SonarCloud</artifactId>
+    <version>1.0.0</version>
+    <packaging>war</packaging>
+
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        
         <junit-jupiter.version>5.5.0</junit-jupiter.version>
+        
+        <failOnMissingWebXml>false</failOnMissingWebXml>
+        <jakarta.jakartaee-api.version>8.0.0</jakarta.jakartaee-api.version>
+        
+        <!--Sonar Cloud Properties-->
+        <sonar.projectKey>vallegrande_JavaEE21</sonar.projectKey>
+        <sonar.organization>vallegrande</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
-      
-    <modules>
-        <module>SonarCloud</module>
-    </modules>
-    
+
     <dependencies>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -25,5 +32,25 @@
             <version>${junit-jupiter.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>jakarta.platform</groupId>
+            <artifactId>jakarta.jakartaee-api</artifactId>
+            <version>${jakarta.jakartaee-api.version}</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
+
+    <build>
+        <finalName>SonarCloud</finalName>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+            </plugin>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.2</version>
+            </plugin>
+        </plugins>
+    </build>
 </project>
