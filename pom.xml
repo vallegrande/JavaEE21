@@ -12,11 +12,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <junit-jupiter.version>5.5.0</junit-jupiter.version>
-
-        <!--Sonar Cloud Properties-->
-        <sonar.projectKey>vallegrande_JavaEE21</sonar.projectKey>
-        <sonar.organization>vallegrande</sonar.organization>
-        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
       
     <modules>
