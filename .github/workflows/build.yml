@@ -2,7 +2,7 @@ name: Build
 on:
   push:
     branches:
-      - eduacasi-sonarcloud 
+      - development 
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
